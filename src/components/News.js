@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
@@ -16,13 +15,17 @@ const News = (props) => {
   };
 
   const updateNews = async () => {
+    props.setProgress(10);
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true);
     let data = await fetch(url);
+    props.setProgress(30);
     let parsedData = await data.json();
+    props.setProgress(70);
     setArticles(parsedData.articles);
     setTotalResults(parsedData.totalResults);
     setLoading(false);
+    props.setProgress(100);
   };
 
   useEffect(() => {

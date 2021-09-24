@@ -1,21 +1,25 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import News from "./components/News";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LoadingBar from "react-top-loading-bar";
 
 const App = () => {
   const pageSize = 9;
   const apiKey = process.env.REACT_APP_NEWS_API;
+  const [progress, setProgress] = useState(0);
 
   return (
     <div>
       <Router>
         <NavBar />
+        <LoadingBar height={3} color="#ffc107" progress={progress} />
         <Switch>
           <Route exact path="/">
             <News
               NavBar
+              setProgress={setProgress}
               apiKey={apiKey}
               key="general"
               pageSize={pageSize}
@@ -26,6 +30,7 @@ const App = () => {
           <Route exact path="/business">
             <News
               NavBar
+              setProgress={setProgress}
               apiKey={apiKey}
               key="business"
               pageSize={pageSize}
@@ -36,6 +41,7 @@ const App = () => {
           <Route exact path="/entertainment">
             <News
               NavBar
+              setProgress={setProgress}
               apiKey={apiKey}
               key="entertainment"
               pageSize={pageSize}
@@ -46,6 +52,7 @@ const App = () => {
           <Route exact path="/general">
             <News
               NavBar
+              setProgress={setProgress}
               apiKey={apiKey}
               key="general"
               pageSize={pageSize}
@@ -56,6 +63,7 @@ const App = () => {
           <Route exact path="/health">
             <News
               NavBar
+              setProgress={setProgress}
               apiKey={apiKey}
               key="health"
               pageSize={pageSize}
@@ -66,6 +74,7 @@ const App = () => {
           <Route exact path="/science">
             <News
               NavBar
+              setProgress={setProgress}
               apiKey={apiKey}
               key="science"
               pageSize={pageSize}
@@ -76,6 +85,7 @@ const App = () => {
           <Route exact path="/sports">
             <News
               NavBar
+              setProgress={setProgress}
               apiKey={apiKey}
               key="sports"
               pageSize={pageSize}
@@ -86,6 +96,7 @@ const App = () => {
           <Route exact path="/technology">
             <News
               NavBar
+              setProgress={setProgress}
               apiKey={apiKey}
               key="technology"
               pageSize={pageSize}
