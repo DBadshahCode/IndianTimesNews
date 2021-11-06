@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import NavBar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 import News from "./components/News";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
@@ -13,12 +13,12 @@ const App = () => {
   return (
     <div>
       <Router>
-        <NavBar />
+        <Navbar />
         <LoadingBar height={3} color="#ffc107" progress={progress} />
         <Switch>
           <Route exact path="/">
             <News
-              NavBar
+              Navbar
               setProgress={setProgress}
               apiKey={apiKey}
               key="general"
@@ -29,7 +29,7 @@ const App = () => {
           </Route>
           <Route exact path="/business">
             <News
-              NavBar
+              Navbar
               setProgress={setProgress}
               apiKey={apiKey}
               key="business"
@@ -40,7 +40,7 @@ const App = () => {
           </Route>
           <Route exact path="/entertainment">
             <News
-              NavBar
+              Navbar
               setProgress={setProgress}
               apiKey={apiKey}
               key="entertainment"
@@ -51,7 +51,7 @@ const App = () => {
           </Route>
           <Route exact path="/general">
             <News
-              NavBar
+              Navbar
               setProgress={setProgress}
               apiKey={apiKey}
               key="general"
@@ -62,7 +62,7 @@ const App = () => {
           </Route>
           <Route exact path="/health">
             <News
-              NavBar
+              Navbar
               setProgress={setProgress}
               apiKey={apiKey}
               key="health"
@@ -73,7 +73,7 @@ const App = () => {
           </Route>
           <Route exact path="/science">
             <News
-              NavBar
+              Navbar
               setProgress={setProgress}
               apiKey={apiKey}
               key="science"
@@ -84,7 +84,7 @@ const App = () => {
           </Route>
           <Route exact path="/sports">
             <News
-              NavBar
+              Navbar
               setProgress={setProgress}
               apiKey={apiKey}
               key="sports"
@@ -95,7 +95,7 @@ const App = () => {
           </Route>
           <Route exact path="/technology">
             <News
-              NavBar
+              Navbar
               setProgress={setProgress}
               apiKey={apiKey}
               key="technology"
